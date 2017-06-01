@@ -1,0 +1,22 @@
+.table {
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+.title {
+  background-color: #ddd;
+}
+.title th {
+  padding: 7px;
+}
+
+.text:nth-child(even) {
+  background-color: #eee;
+}
+.text td {
+  width: 70%;
+  padding: 7px;
+}
+.text td:first-child {
+  width: 30%;
+}

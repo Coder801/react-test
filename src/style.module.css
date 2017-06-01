@@ -1,0 +1,11 @@
+.app {
+  width: 80%;
+  margin: 30px auto;
+}
+.container {
+  padding: 20px;
+  box-sizing: border-box;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}

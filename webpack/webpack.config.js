@@ -14,7 +14,7 @@ module.exports = env => {
       vendor: ['react', 'react-dom', 'react-router-dom']
     },
     output: {
-      filename: '[name].[hash].js',
+      filename: 'js/[name].[hash].js',
       path: path.join(__dirname, '../build/')
     },
 
@@ -47,15 +47,18 @@ module.exports = env => {
     },
 
     plugins: removeEmpty([
-      new webpack.optimize.CommonsChunkPlugin({name: 'vendor', minChunks: Infinity, filename: '[name].[hash].js'}),
+      new webpack.optimize.CommonsChunkPlugin({
+        name: 'vendor',
+        minChunks: Infinity,
+        filename: 'js/[name].[hash].js'
+      }),
       new HtmlWebpackPlugin({
         template: path.join(__dirname, '../src/index.html'),
         filename: 'index.html',
         inject: 'body'
       }),
       new webpack.ProvidePlugin({
-        'React': 'react',
-        'ReactDOM': 'react-dom'
+        'React': 'react'
       }),
       ifProd(new webpack.optimize.UglifyJsPlugin({
         compress: {
@@ -69,7 +72,11 @@ module.exports = env => {
         },
         sourceMap: false
       })),
-      new ExtractTextPlugin({filename: 'bundle.css', disable: false, allChunks: true})
+      new ExtractTextPlugin({
+        filename: 'bundle.css',
+        disable: false,
+        allChunks: true
+      })
     ])
   };
 };

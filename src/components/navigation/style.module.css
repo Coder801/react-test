@@ -1,0 +1,21 @@
+.navigation {
+  width: 100%;
+  display: flex;
+}
+.link {
+  display: block;
+  width: 100%;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Open Sans' sans-serif;
+  border: 1px solid transparent;
+  border-bottom-color: #ccc;
+  border-radius: 4px 4px 0 0;
+  transition: border-color .3s ease;
+  color: #222;
+}
+.selected {
+  border-color: #ccc;
+  border-bottom-color: transparent;
+}
